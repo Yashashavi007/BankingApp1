@@ -1,0 +1,13 @@
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\bin\Debug\netcoreapp3.1\Technovert.BankApp.Services.deps.json
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\bin\Debug\netcoreapp3.1\Technovert.BankApp.Services.dll
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\bin\Debug\netcoreapp3.1\Technovert.BankApp.Services.pdb
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\bin\Debug\netcoreapp3.1\Technovert.BankApp.Models.dll
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\bin\Debug\netcoreapp3.1\Technovert.BankApp.Models.pdb
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\obj\Debug\netcoreapp3.1\Technovert.BankApp.Services.csproj.AssemblyReference.cache
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\obj\Debug\netcoreapp3.1\Technovert.BankApp.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\obj\Debug\netcoreapp3.1\Technovert.BankApp.Services.AssemblyInfoInputs.cache
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\obj\Debug\netcoreapp3.1\Technovert.BankApp.Services.AssemblyInfo.cs
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\obj\Debug\netcoreapp3.1\Technovert.BankApp.Services.csproj.CoreCompileInputs.cache
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\obj\Debug\netcoreapp3.1\Technovert.BankApp.Services.csproj.CopyComplete
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\obj\Debug\netcoreapp3.1\Technovert.BankApp.Services.dll
+C:\Users\Mark-42\source\repos\Technovert.BankApp\Technovert.BankApp.Services\obj\Debug\netcoreapp3.1\Technovert.BankApp.Services.pdb
