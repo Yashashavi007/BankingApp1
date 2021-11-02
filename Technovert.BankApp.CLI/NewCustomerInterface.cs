@@ -28,13 +28,15 @@ namespace Technovert.BankApp.CLI
             CustomerGender customerGender = (CustomerGender)Enum.Parse(typeof(CustomerGender), Console.ReadLine());
 
             Console.Write("\n\t\t Enter initial amount(in Rupees) : ");
-            decimal amount = Convert.ToInt32(Console.ReadLine());
+            int amount = Convert.ToInt32(Console.ReadLine());
+            
 
 
             try
             {
                 Customer newCustomer;
                 BankService obj = new BankService();
+                //Console.WriteLine("Hello World!!");
                 newCustomer = obj.CreateAccount(bankName, IFSCcode, customerName, customerGender, amount);
                 Console.WriteLine("\t\t Account created successfully!!");
                 Console.WriteLine("\t\t Keep your account details for future reference!");
@@ -46,7 +48,7 @@ namespace Technovert.BankApp.CLI
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e);
             }
 
 

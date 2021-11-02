@@ -14,9 +14,9 @@ namespace Technovert.BankApp.Models
 
         public string SenderAccountNumber { get; set; }
 
-        public decimal amount { get; set; }
+        public int amount { get; set; }
 
-        public Transaction(TransactionType type, string accountNumber, decimal Amount, DateTime time)
+        public Transaction(TransactionType type, string accountNumber, int Amount, DateTime time)
         {
             this.type = type;
             this.SenderAccountNumber = accountNumber;

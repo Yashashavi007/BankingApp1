@@ -83,14 +83,15 @@ namespace Technovert.BankApp.Services
             return false;
         }
 
-        public void CreateBank(string bankName, string IFSCCode)
+        public Bank CreateBank(string bankName, string IFSCCode)
         {
             Bank bank = new Bank(bankName, IFSCCode);
             bank.BankId = GenerateBankID(bankName);
             BankList.Add(bank);
+            return bank;
         }
 
-        public Customer CreateAccount(string bankName, string IFSCCode, string name, CustomerGender gender, decimal balance)
+        public Customer CreateAccount(string bankName, string IFSCCode, string name, CustomerGender gender, int balance)
         {
             if (balance < 1000)
             {
@@ -110,17 +111,17 @@ namespace Technovert.BankApp.Services
                 /*Bank bank = from Bank in BankList
                            where Bank.Name == bankName
                            select Bank;*/
-
+                ///Console.WriteLine(bank);
                 if (bank == null)
                 {
-                    CreateBank(bankName, IFSCCode);
+                    bank = CreateBank(bankName, IFSCCode);
                 }
-
+                ///Console.WriteLine(bank.Name);
                 string accountNumber = GenerateAccountNumber();
                 int accountPin = GeneratePin();
-                List<Transaction> passbook = new List<Transaction>();
+                //List<Transaction> passbook = new List<Transaction>();
 
-                Customer account = new Customer(name, gender, accountPin, balance, passbook);
+                Customer account = new Customer(name, gender, accountNumber, accountPin, balance);
                 account.AccountId = GenerateAccountID(name);
 
                 bank.CustomerDetails.Add(account);
@@ -131,7 +132,7 @@ namespace Technovert.BankApp.Services
         }
 
         //Customer Services
-        public void Deposit(Bank bank, Customer accNumber, decimal amount)
+        public void Deposit(Bank bank, Customer accNumber, int amount)
         {
             if (amount > 0)
             {
@@ -143,7 +144,7 @@ namespace Technovert.BankApp.Services
                 error.DepositError();
             }
         }
-        public void Withdraw(Bank bank, Customer accNumber, decimal amount)
+        public void Withdraw(Bank bank, Customer accNumber, int amount)
         {
             if (amount <= GetBalance(accNumber))
             {
@@ -156,11 +157,12 @@ namespace Technovert.BankApp.Services
             }
         }
 
-        public void Transfer(Bank bank, Customer fromAccNumber, Bank rBank, Customer toAccNumber, decimal amount)
+        public void Transfer(Bank bank, Customer fromAccNumber, Bank rBank, Customer toAccNumber, int amount)
         {
             if (amount <= GetBalance(fromAccNumber))
             {
                 fromAccNumber.Balance -= amount;
+                toAccNumber.Balance += amount;
 
                 //BankService Manager = new BankService();
                 UpdatePassbook(bank, fromAccNumber, toAccNumber.AccountNumber, TransactionType.Withdraw, amount);
@@ -183,10 +185,10 @@ namespace Technovert.BankApp.Services
             return accNumber.Passbook;
         }
 
-        public void UpdatePassbook(Bank bank, Customer toAccount, string fromAccount, TransactionType operation, decimal amount)
+        public void UpdatePassbook(Bank bank, Customer toAccount, string fromAccount, TransactionType operation, int amount)
         {
             string transactionId = GenerateTransactionID(bank.Name, toAccount.Name);
-            Transaction obj = new Transaction(operation, toAccount.AccountNumber, amount, DateTime.Now);
+            Transaction obj = new Transaction(operation, fromAccount, amount, DateTime.Now);
             obj.Id = transactionId;
             toAccount.Passbook.Add(obj);
         }
